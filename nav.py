@@ -1,3 +1,6 @@
+##gyroscope GUI
+### taken form somewhere off the interwebz - need to find the source
+
 import pygame, sys
 from pygame.locals import *
 import smbus
