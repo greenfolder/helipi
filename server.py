@@ -37,7 +37,7 @@ print ('waiting for a connection')
                 
 ########
 
-####Servo stuff from adafuit I think
+####Servo stuff from adafuit - a HAT for a pi - copied from their website
 pwm = PWM(0x40)
 
 def setServoPulse(channel, pulse):
@@ -52,7 +52,7 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(50)                        # Set frequency to 60 Hz
 
-####get compass, gyro readings. convert, print out####
+####get compass, gyro readings. convert, print out#### - not actually in use at the moment
 
 def threaded_client(conn):
         
@@ -70,7 +70,7 @@ def threaded_client(conn):
                 p=int(data[4])
 
                 pwm.setPWM(14,0, x)  ##min
-				        pwm.setPWM(12,0, z)  ##min
+		pwm.setPWM(12,0, z)  ##min
                 pwm.setPWM(13,0, r)  ##min
                 pwm.setPWM(15,0, u)
                 pwm.setPWM(0, 0, p)
@@ -83,7 +83,8 @@ def threaded_client(conn):
                 #print (str(addr) + " says: "+(data))
 
 
-### THE LINE BELOW DOESN'T SEEM TO WORK
+### THE LINE BELOW DOESN'T SEEM TO WORK - really doesn't work
+### what it *should* do if the connection breaks
                 if not data:
                         pwm.setPWM(0, 0, 0)
                         break
