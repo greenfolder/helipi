@@ -6,9 +6,9 @@ from pygame.locals import *
 import smbus
 import math
 import time  
+
+
 pygame.init()
-
-
 
   
 # PYGAME WINDOW SETUP 
