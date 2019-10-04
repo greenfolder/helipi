@@ -14,7 +14,8 @@ import time
 # 4) finds and initializes a joystick
 # 5) assigns joystick axis and buttons to servos and motor
 # 6) looks for joystick motions and adjusts servo and motor positions accordingly
-
+#### all controlled via this: 
+#### https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/overview
 
 #1 start pygame and draw a window
 
@@ -49,13 +50,13 @@ print ('connected')
 
 
 #except socket.error as e:
-#        print (str(e))
+#	print (str(e))
 
 #s.listen(5)
 
 print ('waiting for a connection')
 
-# 3 define starting/neutral/middle positions for servos and ESC
+# 3 define starting/neutral/middle positions for servos and ESC (Electronic speed contorller)
 
 ESCinit=220
 ESCMin=240
@@ -103,7 +104,7 @@ while done==False:
 
            
 				
-				cc=j.get_axis(1) # 12 pitch forwards backwards
+		cc=j.get_axis(1) # 12 pitch forwards backwards
                 bb=j.get_axis(0) # 13 roll, left right
                 dd=j.get_axis(2) # 14 elevator, slider
                 aa=j.get_axis(3) # 15 tail, z axis
